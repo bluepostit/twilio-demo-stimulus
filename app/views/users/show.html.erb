@@ -1,3 +1,26 @@
 <div class="container">
   <h1><%= @user.name %></h1>
+
+    <div class="video-call">
+    <div id="video-call-token" data-video-call-token="<%= JSON.generate(@video_call_token) %>"></div>
+    <div class="call-video-views">
+      <div id="remote-video">
+        <div class="no-call">
+          No call in progress. Click 'Call' to connect!
+        </div>
+        <div class="waiting-for-buddy hidden">
+          Waiting for <%= @user.name %> to join...
+        </div>
+      </div>
+      <div id="local-video"></div>
+    </div>
+    <div class="call-buttons">
+      <%= link_to '#', class: 'call-button btn-start-call' do %>
+        <i class="fas fa-phone"></i> Call
+      <% end %>
+      <%= link_to '#', class: 'call-button btn-end-call' do %>
+        <i class="fas fa-phone-slash"></i> End
+      <% end %>
+    </div>
+  </div>
 </div>
