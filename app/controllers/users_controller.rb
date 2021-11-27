@@ -11,6 +11,8 @@ class UsersController < ApplicationController
     return if @user == current_user
 
     twilio = TwilioService.new
-    @video_call_token = twilio.generate_token(current_user, @user)
+    twilio.generate_token(current_user, @user)
+    @twilio_jwt = twilio.jwt
+    @room_id = twilio.room_id
   end
 end
