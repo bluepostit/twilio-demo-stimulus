@@ -1,24 +1,39 @@
 <div class="container">
   <h1><%= @user.name %></h1>
 
-  <div class="video-call">
-    <div id="video-call-token" data-video-call-token="<%= JSON.generate(@video_call_token) %>"></div>
+  <div class="video-call"
+       data-controller="video-call"
+       data-video-call-access-token-value="<%= @twilio_jwt %>"
+       data-video-call-room-id-value="<%= @room_id %>"
+       data-video-call-buddy-video-width-value="200"
+       >
     <div class="call-video-views">
-      <div id="remote-video">
-        <div class="no-call">
+      <div id="remote-video" data-video-call-target="buddyVideo">
+        <div class="no-call" data-video-call-target="noCall">
           No call in progress. Click 'Call' to connect!
         </div>
-        <div class="waiting-for-buddy hidden">
+        <div class="waiting-for-buddy d-none"
+             data-video-call-target="awaitingBuddy">
           Waiting for <%= @user.name %> to join...
         </div>
       </div>
-      <div id="local-video"></div>
+      <div id="local-video" data-video-call-target="localVideo"></div>
     </div>
     <div class="call-buttons">
-      <%= link_to '#', class: 'call-button btn-start-call' do %>
+      <%= link_to '#',
+                  class: 'call-button btn-start-call',
+                  data: {
+                    action: 'click->video-call#joinCall',
+                    video_call_target: 'joinCallButton'
+                  } do %>
         <i class="fas fa-phone"></i> Call
       <% end %>
-      <%= link_to '#', class: 'call-button btn-end-call' do %>
+      <%= link_to '#',
+                  class: 'call-button btn-end-call d-none',
+                  data: {
+                    action: 'click->video-call#endCall',
+                    video_call_target: 'endCallButton'
+                  } do %>
         <i class="fas fa-phone-slash"></i> End
       <% end %>
     </div>
