@@ -13,6 +13,7 @@ export default class extends TwilioVideoController {
   callEnded() {
     console.log('Call ended!')
     this.noCallTarget.classList.remove('d-none')
+    this.awaitingBuddyTarget.classList.add('d-none')
     this.joinCallButtonTarget.classList.remove('d-none')
     this.endCallButtonTarget.classList.add('d-none')
   }

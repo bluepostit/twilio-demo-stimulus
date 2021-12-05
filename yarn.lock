@@ -6241,12 +6241,11 @@ static-extend@^0.1.1:
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
 
-stimulus-twilio-video@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/stimulus-twilio-video/-/stimulus-twilio-video-1.0.4.tgz#400338eaf535032e40a710b9ca2930e1fc75277b"
-  integrity sha512-+jl4vJshveKu4AMLgBMSzZwoyRd7j8hqnHJ/+U26A7QrjUSHVnjdsjdvqqtwOKt051i+oBWkfQbKfTNL9X5mDw==
+stimulus-twilio-video@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/stimulus-twilio-video/-/stimulus-twilio-video-1.0.9.tgz#3f2b21d79e27599300e69249723c1a9dd642029b"
+  integrity sha512-OCOP85hJ7SAmFm9PYhTWJVUluLb7plAHlnNgxgZwGITMZ4AlLtZGKnFEHkkzecGPCq7h4ypR10B9uE4J/6qBIw==
   dependencies:
-    stimulus "^3.0.1"
     twilio-video "^2.18.1"
 
 stimulus@^3.0.1:
